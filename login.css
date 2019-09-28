@@ -26,15 +26,21 @@ body{
     border-color: rgb(196, 194, 194)
 }
 
+.hidden_head-bar {
+    background-color: transparent;
+    width: 800px;
+    margin: 0 auto;
+}
+
 .logo {
     width: 30px;
     height: auto;
-    margin: 7px 0 0 25%;
+    margin: 7px 0 0 3%;
 }
 
 .language {
     float: right;
-    margin: 10px 420px 0 0;
+    margin: 10px 15% 0 0;
     font-size: 12px;
 }
 
