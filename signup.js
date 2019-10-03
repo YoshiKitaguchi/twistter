@@ -18,6 +18,12 @@ $(function(){
     });
 });
 
+$(document).ready(function() {
+    $("#signup").click(function() {
+        window.location.assign('homepage.html');
+    });
+});
+
 
 // makes sure the email is good by comparing with the regex
 var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
