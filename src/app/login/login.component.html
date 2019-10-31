@@ -1,0 +1,21 @@
+<div class="body">
+    <form class="box" style="border:2px #ccc">
+            <div class="container">
+                <img class="logo" src="../../assets/images/twister_bird.jpg" alt="">
+                <h1>Log in to Twistter</h1>
+                <hr>
+                
+                <input type="text" placeholder="Email or username" name="email" id="emailUser" [(ngModel)]="username" required>
+            
+                <input type="password" placeholder="Password" name="psw" id="password" [(ngModel)]="password" required>
+            
+                <div class="clearfix">
+                <button type="submit" class="logupbtn" id="loginbtn" (click)="onSubmit()"><b>Log in</b></button>
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me  ·  
+                </label>
+                <a href="#" routerLink="/signup"  style="display: inline;">Create account</a>
+            </div>
+        </form>
+</div>

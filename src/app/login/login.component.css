@@ -1,0 +1,132 @@
+* {box-sizing: border-box}
+
+input[type=text], input[type=password] {
+    font-size: 13px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-width: 0 0 10px;
+    outline: 0;
+    border-bottom: 2px solid #4caef5;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  border-color: darkblue;
+}
+
+hr {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4caef5;
+  color: white;
+  padding: 13px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 30px;
+}
+
+button:hover {
+  opacity:2;
+}
+
+/* button css for different pages */
+.signupbtn {
+  float: left;
+  width: 100%;
+}
+.logupbtn {
+    float: left;
+    width: 50%;
+}
+
+.container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 575px;
+  border-radius: 25px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Small screen functionality */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+    width: 100%;
+  }
+}
+
+#month {
+    margin: 3 0 0 0px;
+    width: 250px;
+}
+
+#day {
+    margin: 3 5 0 5px;
+    width: 115px;
+}
+
+#year {
+    margin: 3 0 0 0px;
+    width: 161px;
+}
+
+.btn-group {
+    margin: 0 0 0 0px;
+}
+
+#monthDropdown {
+    float: right;
+}
+
+#dayDropdown, #yearDropdown {
+    height: 505px;
+    width: 30px;
+    overflow: auto;
+    float: right;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    margin: 0 0 0 45%;
+    padding-top: 1px;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+div p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#termsConditions {
+    margin-top: 15px;
+}
