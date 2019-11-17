@@ -1,1 +1,38 @@
-<p>homepage works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item">home</a>
+                <a href="#" class="list-group-item">Direct Message</a>
+                <a href="#" class="list-group-item">Time line</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <form class="form_background_color box_out">
+                <ul class="list-group" *ngIf="loadedPosts.length >= 1">
+                    <li class="list-group-item" *ngFor="let post of loadedPosts">
+                        <label for="content">Post {{post.num_post}}</label>
+                        <h4>{{post.title}}</h4>
+                        <p>{{post.content}}</p>
+                        <button type="submit" class="btn btn-default">Subscribe</button>
+                    </li>
+                </ul>
+            </form>
+
+            <form class="form_background_color box_out">
+                <div class="form-group">
+                    <label for="title">Title :</label>
+                    <input type="text" placeholder="Enter your title" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="content">Content :</label>
+                    <input type="text" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}">
+                </div>
+                <p class = "tpbutton btn-toolbar text-center">
+                    <a class="btn navbar-btn btn-primary" (click)="onCreatePost()">Create Post!</a>
+                    <a class="btn navbar-btn btn-danger" (click)="onClearPosts()">Clear Post!</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
