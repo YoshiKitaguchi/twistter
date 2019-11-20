@@ -7,14 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'signup', component: SignUpComponent}
+  { path: 'signup', component: SignUpComponent},
+  { path: 'homepage', component: HomepageComponent}
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignUpComponent],
+  declarations: [AppComponent, LoginComponent, SignUpComponent, HomepageComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,3 @@
-import { PostsService } from './posts.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -13,14 +12,14 @@ export class AppComponent implements OnInit {
   loadedPosts: Post[] = [];
   isFetching = false;
 
-  constructor(private http: HttpClient, private PostsService: PostsService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.isFetching = true;
-    this.PostsService.fetchPosts().subscribe( posts => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    });
+    // this.isFetching = true;
+    // this.PostsService.fetchPosts().subscribe( posts => {
+    //   this.isFetching = false;
+    //   this.loadedPosts = posts;
+    // });
   }
 
   onCreatePost(postData: Post) {
@@ -33,23 +32,23 @@ export class AppComponent implements OnInit {
     //   .subscribe(responseData => {
     //     console.log(responseData);
     //   });
-    this.PostsService.createAndStorePost(postData.title, postData.content);
+    //this.PostsService.createAndStorePost(postData.title, postData.content);
   }
 
   onFetchPosts() {
     // Send Http request
-    this.isFetching = true;
-    this.PostsService.fetchPosts().subscribe( posts => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    });
+    // this.isFetching = true;
+    // this.PostsService.fetchPosts().subscribe( posts => {
+    //   this.isFetching = false;
+    //   this.loadedPosts = posts;
+    // });
   }
 
   onClearPosts() {
     // Send Http request
-    this.PostsService.deletePost().subscribe(()=>{
-      this.loadedPosts = [];
-    });
+    // this.PostsService.deletePost().subscribe(()=>{
+    //   this.loadedPosts = [];
+    // });
   }
 
   private fetchPosts() {
