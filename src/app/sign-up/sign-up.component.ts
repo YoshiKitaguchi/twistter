@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵNgOnChangesFeature } from '@angular/core';
+import { Directive } from '@angular/core';
+
 // import $ from "jquery";
+
+// declare module "jquery" {
+//   export = $;
+// }
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-sign-up',
@@ -31,6 +38,8 @@ export class SignUpComponent implements OnInit {
       });
     });
 
+    
+
     // makes sure the email is good by comparing with the regex
     var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var email = (<HTMLInputElement>document.getElementById("email"));
@@ -45,17 +54,17 @@ export class SignUpComponent implements OnInit {
     email.onchange = confirmEmail;
 
     // confirms the password entered is the same
-    var password = (<HTMLInputElement>document.getElementById("password")); 
-    var confirm_password = (<HTMLInputElement>document.getElementById("repeatPassword"));
-    function confirmPassword(){
-    if(password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
-      confirm_password.setCustomValidity('');
-    }
-    }
-    password.onchange = confirmPassword;
-    confirm_password.onkeyup = confirmPassword;
+    // var password = (<HTMLInputElement>document.getElementById("password")); 
+    // var confirm_password = (<HTMLInputElement>document.getElementById("repeatPassword"));
+    // function confirmPassword(){
+    // if(password.value != confirm_password.value) {
+    //   confirm_password.setCustomValidity("Passwords Don't Match");
+    // } else {
+    //   confirm_password.setCustomValidity('');
+    // }
+    // }
+    // password.onchange = confirmPassword;
+    // confirm_password.onkeyup = confirmPassword;
 
     // $(document).ready(function() {
     //   $("#signup").click(function() {

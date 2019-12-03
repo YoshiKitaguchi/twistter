@@ -93,13 +93,11 @@ button:hover {
     width: 161px;
 }
 
-#day, #month, #year {
-  box-sizing: border-box;
+#day:active, #month:active, #year:active {
+  /* box-sizing: border-box; */
+  /* margin-top: 25px; */
+  position: relative;
 }
-
-/* .btn-group {
-    margin: 0 0 0 0px;
-} */
 
 #monthDropdown {
     float: right;
