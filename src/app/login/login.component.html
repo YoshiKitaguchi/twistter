@@ -12,6 +12,9 @@
                 <div class="clearfix">
                 <button type="submit" class="logupbtn" id="loginbtn" (click)="onSubmit()"><b>Log in</b></button>
                 </div>
+                <div>
+                    <p *ngIf="!is_valid" class="text_red">invalid user!!!</p>
+                </div>
                 <label>
                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me  ·  
                 </label>

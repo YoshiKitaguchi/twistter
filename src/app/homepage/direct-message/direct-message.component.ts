@@ -1,16 +1,16 @@
 import { Component, OnInit, Input, OnDestroy} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../post.model';
+import { Post } from '../../post.model';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, interval } from 'rxjs';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  selector: 'app-direct-message',
+  templateUrl: './direct-message.component.html',
+  styleUrls: ['./direct-message.component.css']
 })
-export class HomepageComponent implements OnInit, OnDestroy {
+export class DirectMessageComponent implements OnInit, OnDestroy {
 
   loadedPosts: Post[] = [];
   title:string = "";
@@ -18,6 +18,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   num_post: number = 1;
 
   user: string;
+  receiver: string;
   private updateSubscription: Subscription;
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
@@ -29,8 +30,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   onCreatePost() {
     console.log(this.title + " : " + this.content);
-    const postData: Post = {title: this.title, content: this.content, num_post: this.num_post, sender: this.user, reciever: "public"};
-    this.loadedPosts.push(postData);
+    const postData: Post = {title: this.title, content: this.content, num_post: this.num_post, sender: this.user, reciever: this.receiver};
     this.http
     .post<{name: string}>(
       'https://ng-complete-guild.firebaseio.com/posts.json',
@@ -49,7 +49,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
         const postsArray: Post[] = [];
         var max_num_post: number = 0;
         for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
+          if (responseData.hasOwnProperty(key) && responseData[key].reciever === this.user) {
             postsArray.push({...responseData[key],id: key })
             max_num_post = responseData[key].num_post > max_num_post ? responseData[key].num_post : max_num_post;
           }
