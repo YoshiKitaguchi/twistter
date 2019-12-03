@@ -130,3 +130,7 @@ div p {
 #termsConditions {
     margin-top: 15px;
 }
+
+.text_red {
+  color: red;
+}
