@@ -7,153 +7,201 @@
     <body>
         <div>
             <form action="action_page.php" class="box">
-                    <div class="container">
-                        <img class="logo" src="../assets/images/twister_bird.jpg" >
-                        <h1>Create your account</h1>
-                        <p id="plsform">Please fill in this form to create an account.</p>
-                        <hr>
-                        <!-- <label for="email"><b>Email</b></label> -->
-                        <input type="text" placeholder="Email" name="email" id="email" required>
+                <div class="container">
+                    <img class="logo" src="../assets/images/twister_bird.jpg" >
+                    <h1>Create your account</h1>
+                    <p id="plsform">Please fill in this form to create an account.</p>
+                    <hr>
+                    <!-- <label for="email"><b>Email</b></label> -->
+                    <input type="text" placeholder="Email" name="email" id="email" required>
+                
+                    <input type="text" placeholder="Username - At least 4 characters" name="username" required pattern=.{4,} maxlength="50" required>
+                    <!-- <label for="psw"><b>Password</b></label> -->
+                    <input type="password" placeholder="Password - At least 6 characters" name="psw" id="password" required pattern=.{6,} required>
+                
+                    <!-- <label for="psw-repeat"><b>Repeat Password</b></label> -->
+                    <input type="password" placeholder="Confirm password" name="psw-repeat" id="repeatPassword" required pattern=.{6,} required>
+                
                     
-                        <input type="text" placeholder="Username" name="username" maxlength="50" required>
-                        <!-- <label for="psw"><b>Password</b></label> -->
-                        <input type="password" placeholder="Password" name="psw" id="password" required>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me  ·  
+                    </label>
+                    <a href="#" style="display: inline;">Forgot password?</a>
                     
-                        <!-- <label for="psw-repeat"><b>Repeat Password</b></label> -->
-                        <input type="password" placeholder="Confirm password" name="psw-repeat" id="repeatPassword" required>
-                    
-                        
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me  ·  
-                        </label>
-                        <a href="#" style="display: inline;">Forgot password?</a>
-                        
-                        <p><b>Date of Birth</b><br>
-                            This should be the date of birth of the person creating this account,
-                            whether it's a personal or business account. This won't be public unless 
-                            you change your profile settings.
-                        </p>
-    
-                        <div class="btn-group dropup" id="monthdiv">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle btn1" type="button" data-toggle="dropdown" 
-                                    aria-haspopup="true" aria-expanded="false" id="month">Month
-                                </button>
-                                <ul class="dropdown-menu" id="monthDropdown">
-                                    <li><a class="dropdown-item">January</a></li>
-                                    <li><a class="dropdown-item">Februrary</a></li>
-                                    <li><a class="dropdown-item">March</a></li>
-                                    <li><a class="dropdown-item">April</a></li>
-                                    <li><a class="dropdown-item">May</a></li>
-                                    <li><a class="dropdown-item">June</a></li>
-                                    <li><a class="dropdown-item">July</a></li>
-                                    <li><a class="dropdown-item">August</a></li>
-                                    <li><a class="dropdown-item">September</a></li>
-                                    <li><a class="dropdown-item">October</a></li>
-                                    <li><a class="dropdown-item">November</a></li>
-                                    <li><a class="dropdown-item">December</a></li>
-                                </ul>
-                        </div>
-                            <div class="btn-group dropup">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle btn2" type="button" data-toggle="dropdown" 
-                                    aria-haspopup="true" aria-expanded="false" id="day">Day
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-left" id="dayDropdown">
-                                        <li><a class="dropdown-item">1</a></li>
-                                        <li><a class="dropdown-item">2</a></li>
-                                        <li><a class="dropdown-item">3</a></li>
-                                        <li><a class="dropdown-item">4</a></li>
-                                        <li><a class="dropdown-item">5</a></li>
-                                        <li><a class="dropdown-item">6</a></li>
-                                        <li><a class="dropdown-item">7</a></li>
-                                        <li><a class="dropdown-item">8</a></li>
-                                        <li><a class="dropdown-item">9</a></li>
-                                        <li><a class="dropdown-item">10</a></li>
-                                        <li><a class="dropdown-item">11</a></li>
-                                        <li><a class="dropdown-item">12</a></li>
-                                        <li><a class="dropdown-item">13</a></li>
-                                        <li><a class="dropdown-item">14</a></li>
-                                        <li><a class="dropdown-item">15</a></li>
-                                        <li><a class="dropdown-item">16</a></li>
-                                        <li><a class="dropdown-item">17</a></li>
-                                        <li><a class="dropdown-item">18</a></li>
-                                        <li><a class="dropdown-item">19</a></li>
-                                        <li><a class="dropdown-item">20</a></li>
-                                        <li><a class="dropdown-item">21</a></li>
-                                        <li><a class="dropdown-item">22</a></li>
-                                        <li><a class="dropdown-item">23</a></li>
-                                        <li><a class="dropdown-item">24</a></li>
-                                        <li><a class="dropdown-item">25</a></li>
-                                        <li><a class="dropdown-item">26</a></li>
-                                        <li><a class="dropdown-item">27</a></li>
-                                        <li><a class="dropdown-item">28</a></li>
-                                        <li><a class="dropdown-item">29</a></li>
-                                        <li><a class="dropdown-item">30</a></li>
-                                        <li><a class="dropdown-item">31</a></li>
-                                        <!-- <button class="dropdown-item" type="button">23</button>
-                                        <button class="dropdown-item" type="button">24</button> -->
-                                </ul>
-                            </div>
-                            <div class="btn-group dropup">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle btn3" type="button" data-toggle="dropdown" 
-                                    aria-haspopup="true" aria-expanded="false" id="year">Year
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-left" id="yearDropdown">
-                                    <li><a class="dropdown-item">2019</a></li>
-                                    <li><a class="dropdown-item">2018</a></li>
-                                    <li><a class="dropdown-item">2017</a></li>   
-                                    <li><a class="dropdown-item">2016</a></li>
-                                    <li><a class="dropdown-item">2015</a></li>
-                                    <li><a class="dropdown-item">2014</a></li>
-                                    <li><a class="dropdown-item">2013</a></li>
-                                    <li><a class="dropdown-item">2012</a></li>
-                                    <li><a class="dropdown-item">2011</a></li>
-                                    <li><a class="dropdown-item">2010</a></li>
-                                    <li><a class="dropdown-item">2009</a></li>
-                                    <li><a class="dropdown-item">2008</a></li>
-                                    <li><a class="dropdown-item">2007</a></li>
-                                    <li><a class="dropdown-item">2006</a></li>
-                                    <li><a class="dropdown-item">2005</a></li>
-                                    <li><a class="dropdown-item">2004</a></li>
-                                    <li><a class="dropdown-item">2003</a></li>
-                                    <li><a class="dropdown-item">2002</a></li>
-                                    <li><a class="dropdown-item">2001</a></li>
-                                    <li><a class="dropdown-item">2000</a></li>
-                                    <li><a class="dropdown-item">1999</a></li>
-                                    <li><a class="dropdown-item">1998</a></li>
-                                    <li><a class="dropdown-item">1997</a></li>
-                                    <li><a class="dropdown-item">1996</a></li>
-                                    <li><a class="dropdown-item">1995</a></li>
-                                    <li><a class="dropdown-item">1994</a></li>
-                                    <li><a class="dropdown-item">1993</a></li>
-                                    <li><a class="dropdown-item">1992</a></li>
-                                    <li><a class="dropdown-item">1991</a></li>
-                                    <li><a class="dropdown-item">1990</a></li>
-                                    <li><a class="dropdown-item">1989</a></li>
-                                    <li><a class="dropdown-item">1988</a></li>
-                                    <li><a class="dropdown-item">1987</a></li>
-                                    <li><a class="dropdown-item">1986</a></li>
-                                    <li><a class="dropdown-item">1985</a></li>
-                                    <li><a class="dropdown-item">1984</a></li>
-                                    <li><a class="dropdown-item">1983</a></li>
-                                    <li><a class="dropdown-item">1982</a></li>
-                                    <li><a class="dropdown-item">1981</a></li>
-                                    <li><a class="dropdown-item">1980</a></li>
-                                    <li><a class="dropdown-item">1979</a></li>
-                                    <li><a class="dropdown-item">1978</a></li>
-                                    <li><a class="dropdown-item">1977</a></li>
-                                    <li><a class="dropdown-item">1976</a></li>
-                                    <li><a class="dropdown-item">1975</a></li>
-                                </ul>
-                            </div>
-                    
-                        <p id="termsConditions">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-                        <div class="clearfix">
-                        <button type="submit" class="signupbtn" id="signup"><b>Sign up</b></button>
-                        </div>
+                    <p><b>Date of Birth</b><br>
+                        This should be the date of birth of the person creating this account,
+                        whether it's a personal or business account. This won't be public unless 
+                        you change your profile settings.
+                    </p>
+
+                    <div>
+                    <div class="btn-group dropup" id="monthdiv">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle btn1" type="button" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false" id="month" aria-required="true">Month
+                            </button>
+                            <ul class="dropdown-menu" id="monthDropdown">
+                                <li><a class="dropdown-item">January</a></li>
+                                <li><a class="dropdown-item">Februrary</a></li>
+                                <li><a class="dropdown-item">March</a></li>
+                                <li><a class="dropdown-item">April</a></li>
+                                <li><a class="dropdown-item">May</a></li>
+                                <li><a class="dropdown-item">June</a></li>
+                                <li><a class="dropdown-item">July</a></li>
+                                <li><a class="dropdown-item">August</a></li>
+                                <li><a class="dropdown-item">September</a></li>
+                                <li><a class="dropdown-item">October</a></li>
+                                <li><a class="dropdown-item">November</a></li>
+                                <li><a class="dropdown-item">December</a></li>
+                            </ul>
                     </div>
+                    
+                    <div class="btn-group dropup">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle btn2" type="button" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false" id="day" aria-required="true">Day
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-left" id="dayDropdown" >
+                                <li><a class="dropdown-item">1</a></li>
+                                <li><a class="dropdown-item">2</a></li>
+                                <li><a class="dropdown-item">3</a></li>
+                                <li><a class="dropdown-item">4</a></li>
+                                <li><a class="dropdown-item">5</a></li>
+                                <li><a class="dropdown-item">6</a></li>
+                                <li><a class="dropdown-item">7</a></li>
+                                <li><a class="dropdown-item">8</a></li>
+                                <li><a class="dropdown-item">9</a></li>
+                                <li><a class="dropdown-item">10</a></li>
+                                <li><a class="dropdown-item">11</a></li>
+                                <li><a class="dropdown-item">12</a></li>
+                                <li><a class="dropdown-item">13</a></li>
+                                <li><a class="dropdown-item">14</a></li>
+                                <li><a class="dropdown-item">15</a></li>
+                                <li><a class="dropdown-item">16</a></li>
+                                <li><a class="dropdown-item">17</a></li>
+                                <li><a class="dropdown-item">18</a></li>
+                                <li><a class="dropdown-item">19</a></li>
+                                <li><a class="dropdown-item">20</a></li>
+                                <li><a class="dropdown-item">21</a></li>
+                                <li><a class="dropdown-item">22</a></li>
+                                <li><a class="dropdown-item">23</a></li>
+                                <li><a class="dropdown-item">24</a></li>
+                                <li><a class="dropdown-item">25</a></li>
+                                <li><a class="dropdown-item">26</a></li>
+                                <li><a class="dropdown-item">27</a></li>
+                                <li><a class="dropdown-item">28</a></li>
+                                <li><a class="dropdown-item">29</a></li>
+                                <li><a class="dropdown-item">30</a></li>
+                                <li><a class="dropdown-item">31</a></li>
+                                <!-- <button class="dropdown-item" type="button">23</button>
+                                <button class="dropdown-item" type="button">24</button> -->
+                        </ul>
+                    </div>
+                    <div class="btn-group dropup">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle btn3" type="button" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false" id="year" aria-required="true">Year
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-left" id="yearDropdown">
+                            <li><a class="dropdown-item">2019</a></li>
+                            <li><a class="dropdown-item">2018</a></li>
+                            <li><a class="dropdown-item">2017</a></li>   
+                            <li><a class="dropdown-item">2016</a></li>
+                            <li><a class="dropdown-item">2015</a></li>
+                            <li><a class="dropdown-item">2014</a></li>
+                            <li><a class="dropdown-item">2013</a></li>
+                            <li><a class="dropdown-item">2012</a></li>
+                            <li><a class="dropdown-item">2011</a></li>
+                            <li><a class="dropdown-item">2010</a></li>
+                            <li><a class="dropdown-item">2009</a></li>
+                            <li><a class="dropdown-item">2008</a></li>
+                            <li><a class="dropdown-item">2007</a></li>
+                            <li><a class="dropdown-item">2006</a></li>
+                            <li><a class="dropdown-item">2005</a></li>
+                            <li><a class="dropdown-item">2004</a></li>
+                            <li><a class="dropdown-item">2003</a></li>
+                            <li><a class="dropdown-item">2002</a></li>
+                            <li><a class="dropdown-item">2001</a></li>
+                            <li><a class="dropdown-item">2000</a></li>
+                            <li><a class="dropdown-item">1999</a></li>
+                            <li><a class="dropdown-item">1998</a></li>
+                            <li><a class="dropdown-item">1997</a></li>
+                            <li><a class="dropdown-item">1996</a></li>
+                            <li><a class="dropdown-item">1995</a></li>
+                            <li><a class="dropdown-item">1994</a></li>
+                            <li><a class="dropdown-item">1993</a></li>
+                            <li><a class="dropdown-item">1992</a></li>
+                            <li><a class="dropdown-item">1991</a></li>
+                            <li><a class="dropdown-item">1990</a></li>
+                            <li><a class="dropdown-item">1989</a></li>
+                            <li><a class="dropdown-item">1988</a></li>
+                            <li><a class="dropdown-item">1987</a></li>
+                            <li><a class="dropdown-item">1986</a></li>
+                            <li><a class="dropdown-item">1985</a></li>
+                            <li><a class="dropdown-item">1984</a></li>
+                            <li><a class="dropdown-item">1983</a></li>
+                            <li><a class="dropdown-item">1982</a></li>
+                            <li><a class="dropdown-item">1981</a></li>
+                            <li><a class="dropdown-item">1980</a></li>
+                            <li><a class="dropdown-item">1979</a></li>
+                            <li><a class="dropdown-item">1978</a></li>
+                            <li><a class="dropdown-item">1977</a></li>
+                            <li><a class="dropdown-item">1976</a></li>
+                            <li><a class="dropdown-item">1975</a></li>
+                            <li><a class="dropdown-item">1974</a></li>
+                            <li><a class="dropdown-item">1973</a></li>
+                            <li><a class="dropdown-item">1972</a></li>
+                            <li><a class="dropdown-item">1971</a></li>
+                            <li><a class="dropdown-item">1970</a></li>
+                            <li><a class="dropdown-item">1969</a></li>
+                            <li><a class="dropdown-item">1968</a></li>
+                            <li><a class="dropdown-item">1967</a></li>
+                            <li><a class="dropdown-item">1966</a></li>
+                            <li><a class="dropdown-item">1965</a></li>
+                            <li><a class="dropdown-item">1964</a></li>
+                            <li><a class="dropdown-item">1963</a></li>
+                            <li><a class="dropdown-item">1962</a></li>
+                            <li><a class="dropdown-item">1961</a></li>
+                            <li><a class="dropdown-item">1960</a></li>
+                            <li><a class="dropdown-item">1959</a></li>
+                            <li><a class="dropdown-item">1958</a></li>
+                            <li><a class="dropdown-item">1957</a></li>
+                            <li><a class="dropdown-item">1956</a></li>
+                            <li><a class="dropdown-item">1955</a></li>
+                            <li><a class="dropdown-item">1954</a></li>
+                            <li><a class="dropdown-item">1953</a></li>
+                            <li><a class="dropdown-item">1952</a></li>
+                            <li><a class="dropdown-item">1951</a></li>
+                            <li><a class="dropdown-item">1950</a></li>
+                            <li><a class="dropdown-item">1949</a></li>
+                            <li><a class="dropdown-item">1948</a></li>
+                            <li><a class="dropdown-item">1947</a></li>
+                            <li><a class="dropdown-item">1946</a></li>
+                            <li><a class="dropdown-item">1945</a></li>
+                            <li><a class="dropdown-item">1944</a></li>
+                            <li><a class="dropdown-item">1943</a></li>
+                            <li><a class="dropdown-item">1942</a></li>
+                            <li><a class="dropdown-item">1941</a></li>
+                            <li><a class="dropdown-item">1940</a></li>
+                            <li><a class="dropdown-item">1939</a></li>
+                            <li><a class="dropdown-item">1938</a></li>
+                            <li><a class="dropdown-item">1937</a></li>
+                            <li><a class="dropdown-item">1936</a></li>
+                            <li><a class="dropdown-item">1935</a></li>
+                            <li><a class="dropdown-item">1934</a></li>
+                            <li><a class="dropdown-item">1933</a></li>
+                            <li><a class="dropdown-item">1932</a></li>
+                            <li><a class="dropdown-item">1931</a></li>
+                            <li><a class="dropdown-item">1930</a></li>
+
+                        </ul>
+                    </div>
+                    </div>
+
+                    <p id="termsConditions">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                    <div class="clearfix">
+                    <button type="submit" class="signupbtn" id="signup"><b>Sign up</b></button>
+                    </div>
+                </div>
             </form>
         </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

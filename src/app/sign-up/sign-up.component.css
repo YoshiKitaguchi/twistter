@@ -47,8 +47,8 @@ button:hover {
 }
 
 .logupbtn {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .container {
@@ -79,35 +79,45 @@ button:hover {
 }
 
 #month {
-    margin: 3 0 0 0px;
-    width: 250px;
+  /* margin-left: 10px; */
+  margin-top: 10px;
+  width: 250px;
 }
 
 #day {
-    margin: 3 5 0 5px;
-    width: 115px;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 115px;
 }
 
 #year {
-    margin: 3 0 0 0px;
-    width: 161px;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  width: 141px;
 }
 
 #day:active, #month:active, #year:active {
   /* box-sizing: border-box; */
   /* margin-top: 25px; */
-  position: relative;
-}
-
-#monthDropdown {
-    float: right;
+  /* position: relative; */
 }
 
 #dayDropdown, #yearDropdown {
-    height: 505px;
-    width: 30px;
-    overflow: auto;
-    float: right;
+  height: 505px;
+  /* width: 30px; */
+  overflow: auto;
+}
+
+#dayDropdown, #yearDropdown, #monthDropdown {
+  float: right;
+}
+
+#dayDropdown:active, #yearDropdown:active, #monthDropdown:active {
+  position: relative;
+  display: inline-block;
 }
 
 .logo {
@@ -131,4 +141,12 @@ div p {
 
 #termsConditions {
     margin-top: 15px;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:invalid:hover {
+  border: 1px solid red;
 }

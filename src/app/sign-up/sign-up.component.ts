@@ -38,8 +38,6 @@ export class SignUpComponent implements OnInit {
       });
     });
 
-    
-
     // makes sure the email is good by comparing with the regex
     var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var email = (<HTMLInputElement>document.getElementById("email"));
@@ -54,17 +52,17 @@ export class SignUpComponent implements OnInit {
     email.onchange = confirmEmail;
 
     // confirms the password entered is the same
-    // var password = (<HTMLInputElement>document.getElementById("password")); 
-    // var confirm_password = (<HTMLInputElement>document.getElementById("repeatPassword"));
-    // function confirmPassword(){
-    // if(password.value != confirm_password.value) {
-    //   confirm_password.setCustomValidity("Passwords Don't Match");
-    // } else {
-    //   confirm_password.setCustomValidity('');
-    // }
-    // }
-    // password.onchange = confirmPassword;
-    // confirm_password.onkeyup = confirmPassword;
+    var password = (<HTMLInputElement>document.getElementById("password")); 
+    var confirm_password = (<HTMLInputElement>document.getElementById("repeatPassword"));
+    function confirmPassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+    }
+    password.onchange = confirmPassword;
+    confirm_password.onkeyup = confirmPassword;
 
     // $(document).ready(function() {
     //   $("#signup").click(function() {
