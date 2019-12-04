@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵNgOnChangesFeature } from '@angular/core';
+import { Directive } from '@angular/core';
+
 // import $ from "jquery";
+
+// declare module "jquery" {
+//   export = $;
+// }
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-sign-up',
@@ -12,24 +19,24 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     // updates the dropdown menus
-    // $(function(){
-    //   $("#monthDropdown").on('click', 'li a', function(){
-    //       $(".btn1:first-child").text($(this).text());
-    //       $(".btn1:first-child").val($(this).text());
-    //   });
-    // });
-    // $(function(){
-    //   $("#dayDropdown").on('click', 'li a', function(){
-    //       $(".btn2:first-child").text($(this).text());
-    //       $(".btn2:first-child").val($(this).text());
-    //   });
-    // });
-    // $(function(){
-    //   $("#yearDropdown").on('click', 'li a', function(){
-    //       $(".btn3:first-child").text($(this).text());
-    //       $(".btn3:first-child").val($(this).text());
-    //   });
-    // });
+    $(function(){
+      $("#monthDropdown").on('click', 'li a', function(){
+          $(".btn1:first-child").text($(this).text());
+          $(".btn1:first-child").val($(this).text());
+      });
+    });
+    $(function(){
+      $("#dayDropdown").on('click', 'li a', function(){
+          $(".btn2:first-child").text($(this).text());
+          $(".btn2:first-child").val($(this).text());
+      });
+    });
+    $(function(){
+      $("#yearDropdown").on('click', 'li a', function(){
+          $(".btn3:first-child").text($(this).text());
+          $(".btn3:first-child").val($(this).text());
+      });
+    });
 
     // makes sure the email is good by comparing with the regex
     var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
