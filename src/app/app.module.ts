@@ -9,16 +9,20 @@ import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DirectMessageComponent } from './homepage/direct-message/direct-message.component';
+import { PostsComponent } from './homepage/posts/posts.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'signup', component: SignUpComponent},
-  { path: 'homepage', component: HomepageComponent},
-  { path: 'homepage/:id', component: HomepageComponent}
+  { path: 'homepage/:id', component: HomepageComponent, children: [
+    { path: 'posts/:id', component: PostsComponent},
+    { path: 'DM/:id', component: DirectMessageComponent}
+  ]},
+
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignUpComponent, HomepageComponent, DirectMessageComponent],
+  declarations: [AppComponent, LoginComponent, SignUpComponent, HomepageComponent, DirectMessageComponent, PostsComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,26 @@
+<div class="container Post-style">
+    <div class="form-group">
+        <h4 class="createPost-title">Create Post</h4>
+    </div>
+    <div class="form-group">
+        <label for="topic">Topic: </label>
+        <input type="text" placeholder="Enter your title" maxlength="20" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="content">Content :</label>
+        <textarea class="form-control" rows="3" maxlength="200" id="comment" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}"></textarea>
+        <p class="createPost-button"><a class="btn button" (click)="onCreatePost()">Post</a><a class="btn button" (click)="onClearPosts()">Delete all</a></p>
+    </div>
+</div>
+
+<div class="container Post-style">
+    <ul class="list-group" *ngIf="loadedPosts.length >= 1">
+        <li class="list-group-item" *ngFor="let post of loadedPosts; let i = index">
+            <label for="content">Post {{post.num_post}}</label>
+            <h3 class= "box_out">{{post.sender}} : {{post.title}}</h3>
+            <h4 class= "box_out">content: {{post.content}}</h4>
+            <p class="likes-font box_out"><img class="like" src="../assets/images/like-button2.jpg" > {{post.likes}} Likes</p>
+            <button type="submit" class="btn btn-default" style="margin-left: 20px;" (click)="onUpdate(i)">like or unlike</button>
+        </li>
+    </ul>
+</div>

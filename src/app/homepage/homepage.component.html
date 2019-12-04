@@ -1,32 +1,85 @@
-<div class="container">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<nav class="navbar navbar-style">
+    <div class="container">
+        <div class="navbar-header">
+            <a href=""><img class="logo" src="../assets/images/twister_bird.jpg"></a> 
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+            <li><a (click)="toPost()">Home</a></li>
+            <li><a (click)="toDM()">Direct Message</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>{{user}}</a></li>
+        </ul>
+
+    </div> 
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <div class="container Post-style">
+    <div class="form-group">
+        <h4 class="createPost-title">Create Post</h4>
+    </div>
+    <div class="form-group">
+        <label for="topic">Topic: </label>
+        <input type="text" placeholder="Enter your title" maxlength="20" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="content">Content :</label>
+        <textarea class="form-control" rows="3" maxlength="200" id="comment" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}"></textarea>
+        <p class="createPost-button"><a class="btn button" (click)="onCreatePost()">Post</a><a class="btn button" (click)="onClearPosts()">Delete all</a></p>
+    </div>
+</div>
+
+<div class="container Post-style">
+    <ul class="list-group" *ngIf="loadedPosts.length >= 1">
+        <li class="list-group-item" *ngFor="let post of loadedPosts; let i = index">
+            <label for="content">Post {{post.num_post}}</label>
+            <h3 class= "box_out">{{post.sender}} : {{post.title}}</h3>
+            <h4 class= "box_out">content: {{post.content}}</h4>
+            <p class="likes-font box_out"><img class="like" src="../assets/images/like-button2.jpg" > {{post.likes}} Likes</p>
+            <button type="submit" class="btn btn-default" style="margin-left: 20px;" (click)="onUpdate(i)">like or unlike</button>
+        </li>
+    </ul>
+</div> -->
+
+<!-- <app-posts></app-posts> -->
+
+
+
+<!-- <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-4">
             <div class="list-group">
-                <a href="#" class="list-group-item">home</a>
-                <a href="#" class="list-group-item">Direct Message</a>
-                <a href="#" class="list-group-item">Time line</a>
+                <a class="list-group-item">home</a>
+                <a class="list-group-item">Direct Message</a>
+                <a class="list-group-item">Time line</a>
             </div>
         </div>
         <div class="col-xs-12 col-sm-4">
             <form class="form_background_color box_out">
                 <ul class="list-group" *ngIf="loadedPosts.length >= 1">
-                    <li class="list-group-item" *ngFor="let post of loadedPosts">
+                    <li class="list-group-item" *ngFor="let post of loadedPosts; let i = index">
                         <label for="content">Post {{post.num_post}}</label>
-                        <h4>{{post.title}}</h4>
+                        <h4>{{post.sender}} : {{post.title}}</h4>
                         <p>{{post.content}}</p>
-                        <button type="submit" class="btn btn-default">Subscribe</button>
+                        <p>{{post.likes}}</p>
+                        <button type="submit" class="btn btn-default" (click)="onUpdate(i)">like</button>
                     </li>
                 </ul>
             </form>
 
             <form class="form_background_color box_out">
                 <div class="form-group">
-                    <label for="title">Title :</label>
-                    <input type="text" placeholder="Enter your title" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
+                    <label for="topic">Topic :</label>
+                    <input type="text" placeholder="Enter your title" maxlength="20" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group">
                     <label for="content">Content :</label>
-                    <input type="text" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}">
+                    <textarea class="form-control" rows="3" maxlength="200" id="comment" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}"></textarea>
                 </div>
                 <p class = "tpbutton btn-toolbar text-center">
                     <a class="btn navbar-btn btn-primary" (click)="onCreatePost()">Create Post!</a>
@@ -39,4 +92,4 @@
             <app-direct-message></app-direct-message>
         </div>
     </div>
-</div>
+</div> -->

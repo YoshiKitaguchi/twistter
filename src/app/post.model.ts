@@ -5,4 +5,5 @@ export interface Post {
     id?: string;
     sender?: string;
     reciever?: string;
+    likes?:number;
 }

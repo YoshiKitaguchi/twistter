@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ɵɵNgOnChangesFeature } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Directive } from '@angular/core';
 
 // import $ from "jquery";
@@ -7,6 +10,7 @@ import { Directive } from '@angular/core';
 //   export = $;
 // }
 import * as $ from "jquery";
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +19,24 @@ import * as $ from "jquery";
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  username: string = "";
+  password1: string = "";
+  password2: string = "";
+  tempLoginData = [];
+  constructor(private http: HttpClient,public router:Router) { }
+
+  private fetchPosts() {
+    this.http.get('https://twister-user-data.firebaseio.com/posts.json')
+    .pipe(map(responseData =>{
+      for (const key in responseData) {
+        this.tempLoginData.push({...responseData[key], id: key});
+      }
+    }))
+    .subscribe(posts => {
+      console.log(posts);
+    });
+  }
+
 
   ngOnInit() {
     // updates the dropdown menus
@@ -64,12 +85,39 @@ export class SignUpComponent implements OnInit {
     password.onchange = confirmPassword;
     confirm_password.onkeyup = confirmPassword;
 
-    // $(document).ready(function() {
-    //   $("#signup").click(function() {
-    //       window.location.assign('homepage.html');
-    //   });
-    // });
+    this.fetchPosts();
+  }
 
+  passMatch: boolean = true;
+
+  onSubmit(){
+      // console.log("username: "  + this.username);
+      // console.log("password1: " + this.password1);
+      // console.log("password2:" + this.password2);
+
+      console.log(this.tempLoginData);
+      if (this.password1 != this.password2 || this.username.length < 3 || this.password1.length < 6) {
+        this.passMatch = false;
+      }
+      else {
+        this.passMatch= true;
+        var is_exit:boolean = false;
+        for (let element of this.tempLoginData) {
+          if(element.username === this.username) {
+            is_exit = true;
+          }
+        }
+        if(!is_exit) {
+          var loginData = {
+            username: this.username,
+            password: this.password1
+          }
+          this.http.post('https://twister-user-data.firebaseio.com/posts.json',loginData).subscribe(responseData => {
+            console.log(responseData);
+          });
+          this.router.navigate([''])
+        }
+      }
   }
 
 }

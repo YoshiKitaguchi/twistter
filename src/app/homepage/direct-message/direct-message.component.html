@@ -13,18 +13,18 @@
 <form class="form_background_color box_out">
     <div class="form-group">
         <label for="send-to">send to:</label>
-        <input type="text" placeholder="Receiver name" [(ngModel)]="receiver" required [ngModelOptions]="{standalone: true}">
+        <input type="text" placeholder="Receiver name" maxlength="50" [(ngModel)]="receiver" required [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-group">
         <label for="title">Title :</label>
-        <input type="text" placeholder="Enter your title" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
+        <input type="text" placeholder="Enter your title" maxlength="20" [(ngModel)]="title" required [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-group">
         <label for="content">Content :</label>
-        <input type="text" placeholder="Enter your content" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}">
+        <input type="text" placeholder="Enter your content" maxlength="200" [(ngModel)]="content" required [ngModelOptions]="{standalone: true}">
     </div>
     <p class = "tpbutton btn-toolbar text-center">
-        <a class="btn navbar-btn btn-primary" (click)="onCreatePost()">Create Post!</a>
-        <a class="btn navbar-btn btn-danger" (click)="onClearPosts()">Clear Post!</a>
+        <a class="btn navbar-btn btn-primary" (click)="onCreatePost()">Send DM!</a>
+        <a class="btn navbar-btn btn-danger" (click)="onClearPosts()">Clear all!</a>
     </p>
 </form>
